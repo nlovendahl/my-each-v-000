@@ -1,12 +1,13 @@
 def my_each(array)
-  count = 0
-  while count < array.length
-    yield(array[count])
-      do |x| puts x
+  if block_given?
+
+    count = 0
+    while count < array.length
+      yield(array[count])
+      count += 1
     end
-    count += 1
+    array
   end
-  array
 end
 
 def my_each(array)
